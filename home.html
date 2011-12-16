@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Photography Club Home</title>
+	<!-- Date: 2011-12-14 -->
+</head>
+<body>
+  
+  <!-- jquery stylesheet and files from google cdn -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+  
+  <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+  
+  <script type="text/javascript">
+    function validateUsername(){
+      var cor_username = 'photo'
+      var given_username = $('#username').val();
+      if(given_username.length < 1 || (given_username != cor_username) ){
+        $('#username').addClass('error');
+        return false;
+      }else{
+        $('#username').removeClass('error');
+        return true;
+      }
+    }
+    
+    function validatePassword(){
+      var cor_pass = 'photo'
+      var given_pass = $('#password').val();
+      if(given_pass.length < 1 || (given_pass != cor_pass) ){
+        $('#password').addClass('error');
+        return false;
+      }else{
+        $('#password').removeClass('error');
+        return true;
+      }
+    }
+    $(document).ready(function() {
+      //login functions
+      $('#username').blur(validateUsername);
+      $('#password').blur(validatePassword);
+      $('#login_form').submit(function() {
+        if (validateUsername() && validatePassword()){
+          alert('Welcome Back ' + $('#username').val() );
+        }else{
+          $('#login_response').html('Please try again with all the required values');
+        }
+        return false;
+      });
+      
+      $('#info').bind('click', function() {
+        window.location.href = 'info.html';
+        return false;
+      });
+      $('#gallery').bind('click', function() {
+        window.location.href = 'gallery.html';
+        return false;
+      });
+      $('#contact').bind('click', function() {
+        window.location.href = 'contact.html';
+        return false;
+      });
+      
+      // Expand Panel
+    	$("#open").click(function(){
+    		$("div#panel").slideDown("slow");
+
+    	});	
+
+    	// Collapse Panel
+    	$("#close").click(function(){
+    		$("div#panel").slideUp("slow");
+      });		
+
+    	// Switch buttons from "Log In | Register" to "Close Panel" on click
+    	$("#toggle a").click(function () {
+    		$("#toggle a").toggle();
+    	});
+    	
+    });
+  </script>
+  
+  <!-- Panel -->
+  <div id="toppanel">
+  	<div id="panel">
+      <form id="login_form" >
+        Username: <input id="username" type="textarea"></input>
+        <br/>
+        Password: <input id="password" type="password"></input>
+        <br/>
+        <input id="rem_password" type="checkbox" name="remember" value="Yes" ></input> Remember Password 
+        <br/>
+        <input id="login" type="submit" value="Login">
+      </form>
+      <div id="login_response">
+        
+      </div>
+    </div>
+  	<div class="tab">
+  		<ul class="login">
+  			<li id="toggle">
+  				<a id="open" class="open" href="#">Log In | Register</a>
+  				<a id="close" style="display: none;" class="close" href="#">Close Panel</a>			
+  			</li>
+  			<li class="right">&nbsp;</li>
+  		</ul> 
+  	</div> <!-- / top -->
+  </div>
+  <br/>
+  <div id="nav">
+    <div id="home" class="selected">Home</div>
+    <div id="info">Club Info</div>
+    <div id="gallery">Galleries</div>
+    <div id="contact">Contact</div>
+  </div>
+  <br/>
+  <div id="container">
+    <div id="animal"></div>
+    <div id="bridge"></div>
+    <div id="people"></div>
+    <div id="profession"></div>
+    <div id="romantic"></div>
+    <div id="abstract"></div>
+  <div>
+</body>
+</html>
