@@ -19,19 +19,7 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#toppanel').load("login.html");
-      
-      $('#info').bind('click', function() {
-        window.location.href = 'info.html';
-        return false;
-      });
-      $('#gallery').bind('click', function() {
-        window.location.href = 'gallery.html';
-        return false;
-      });
-      $('#contact').bind('click', function() {
-        window.location.href = 'contact.html';
-        return false;
-      });
+      $('#nav').load("nav.html");
       
     });
   </script>
@@ -41,11 +29,7 @@
 
   </div>
   <br/>
-  <div id="nav">
-    <div id="home" class="selected">Home</div>
-    <div id="info">Club Info</div>
-    <div id="gallery">Galleries</div>
-    <div id="contact">Contact</div>
+  <div id="nav" page="home">
   </div>
   <br/>
   <div id="container">
