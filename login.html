@@ -9,7 +9,7 @@
       $('#username').removeClass('error');
       return true;
     }
-  }
+  };
 
   function validatePassword(){
     var cor_pass = 'photo'
@@ -21,7 +21,8 @@
       $('#password').removeClass('error');
       return true;
     }
-  }
+  };
+  
   $(document).ready(function() {
     //login functions
     $('#username').blur(validateUsername);
