@@ -18,26 +18,12 @@
   
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#home').bind('click', function() {
-        window.location.href = 'home.html';
-        return false;
-      });
-      $('#info').bind('click', function() {
-        window.location.href = 'info.html';
-        return false;
-      });
-      $('#gallery').bind('click', function() {
-        window.location.href = 'gallery.html';
-        return false;
-      });
+      $('#toppanel').load("login.html");
+      $('#nav').load("nav.html");
     });
   </script>
-  <div id="nav">
-    <div id="home">Home</div>
-    <div id="info">Club Info</div>
-    <div id="gallery">Galleries</div>
-    <div id="contact" class="selected">Contact</div>
-  </div>
+  
+  <div id="nav" page="contact"></div>
   <div id="container">
     
   <div>
