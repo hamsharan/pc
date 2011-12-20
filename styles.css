@@ -228,3 +228,15 @@ a:hover.close {background: url(bt_close.png) no-repeat left -19px;}
 #accordion p {
 	font-style:italic;
 }
+
+/*gallery*/
+#gal_nature li ,#gal_flower li,#gal_love li,#gal_abstract li,#gal_animal li {
+	list-style:none;
+}
+#gal_nature img ,#gal_flower img,#gal_love img,#gal_abstract img,#gal_animal img{
+	height:100px;
+	width:100px;
+	float:left;
+	display:inline;
+	
+}
