@@ -19,30 +19,31 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#nav').load("nav.html");
-      // $('#gallery_tabs').tabs();
-      $('#gallery_tabs').tabs({
-          load: function(event, ui) {
-              $('a', ui.panel).click(function() {
-                  $(ui.panel).load(this.href);
-                  return false;
-              });
-          }
-      });
-    });
+      $(function() {
+      		$( "#gallery_tabs" ).tabs({
+      			ajaxOptions: {
+      				error: function( xhr, status, index, anchor ) {
+      					$( anchor.hash ).html(
+      						"Couldn't load this tab. We'll try to fix this as soon as possible. " +
+      						"If this wouldn't be a demo." );
+      				}
+      			}
+      		});
+      	});
   </script>
   
   <div id="nav" page="gallery"></div>
   <div id="container">
     <div id="gallery_tabs">
         <ul>
-            <li><a href="nature.html"><span>Nature</span></a></li>
+            <li><a href="#tabs-1"><span>Nature</span></a></li>
             <li><a href="abstract.html"><span>Abstract</span></a></li>
             <li><a href="flowers.html"><span>Flowers</span></a></li>
             <li><a href="animals.html"><span>Animals</span></a></li>
             <li><a href="love.html"><span>Love</span></a></li>
         </ul>
-        <div id="Nature"> <!-- preloded -->
-            
+        <div id="tabs-1"> <!-- preloded -->
+            <p>nature is great</p>
         </div>
     </div>
   <div>
