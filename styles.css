@@ -230,6 +230,9 @@ a:hover.close {background: url(bt_close.png) no-repeat left -19px;}
 }
 
 /*gallery*/
+#gal_nature {
+	height:400px;
+}
 #gal_nature li {
 	list-style:none;
 }
