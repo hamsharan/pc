@@ -19,31 +19,36 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#nav').load("nav.html");
-      $(function() {
-      		$( "#gallery_tabs" ).tabs({
-      			ajaxOptions: {
-      				error: function( xhr, status, index, anchor ) {
-      					$( anchor.hash ).html(
-      						"Couldn't load this tab. We'll try to fix this as soon as possible. " +
-      						"If this wouldn't be a demo." );
-      				}
-      			}
-      		});
-      	});
+      // $('#gallery_tabs').tabs();
+      $('#gallery_tabs').tabs({
+          load: function(event, ui) {
+              $('a', ui.panel).click(function() {
+                  $(ui.panel).load(this.href);
+                  return false;
+              });
+          }
+      });
+    });
   </script>
   
   <div id="nav" page="gallery"></div>
   <div id="container">
     <div id="gallery_tabs">
         <ul>
-            <li><a href="#tabs-1"><span>Nature</span></a></li>
-            <li><a href="abstract.html"><span>Abstract</span></a></li>
-            <li><a href="flowers.html"><span>Flowers</span></a></li>
+            <li><a href="nature.html" title="nature"><span>Nature</span></a></li>
+            <li><a href="abstract.html" title="abstract"><span>Abstract</span></a></li>
+            <li><a href="flowers.html" title="flower"><span>Flowers</span></a></li>
             <li><a href="animals.html"><span>Animals</span></a></li>
             <li><a href="love.html"><span>Love</span></a></li>
         </ul>
-        <div id="tabs-1"> <!-- preloded -->
-            <p>nature is great</p>
+        <div id="nature"> <!-- preloded -->
+            
+        </div>
+        <div id="abstract"> <!-- preloded -->
+            
+        </div>
+        <div id="flower"> <!-- preloded -->
+            
         </div>
     </div>
   <div>
