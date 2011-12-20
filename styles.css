@@ -215,3 +215,16 @@ a:hover.close {background: url(bt_close.png) no-repeat left -19px;}
 	z-index: 3;
 	display: none;
 }
+/*accordian info page*/
+#accordion {
+	width: 80%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left:10%;
+}
+#accordion a {
+	color:red;
+}
+#accordion p {
+	font-style:italic;
+}
