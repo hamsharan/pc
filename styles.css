@@ -230,13 +230,13 @@ a:hover.close {background: url(bt_close.png) no-repeat left -19px;}
 }
 
 /*gallery*/
-#gal_nature {
+#gal_nature,#gal_flower,#gal_abstract,#gal_animal,#gal_love {
 	height:400px;
 }
-#gal_nature li {
+#gal_nature li,#gal_flower li,#gal_abstract li,#gal_animal li,#gal_love li {
 	list-style:none;
 }
-#gal_nature img {
+#gal_nature img,#gal_flower img,#gal_abstract img,#gal_animal img,#gal_love img {
 	height:100px;
 	width:100px;
 	float:left;
