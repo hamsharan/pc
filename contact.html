@@ -17,14 +17,99 @@
   <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
   
   <script type="text/javascript">
+  
+    function validateName(){
+      var given_username = $('#name').val();
+      if(given_username.length < 1){
+        $('#name').addClass('error');
+        return false;
+      }else{
+        $('#name').removeClass('error');
+        return true;
+      }
+    };
+
+    function validateDOB(){
+      var given_pass = $('#dob').val();
+      if(given_pass.length < 1 ){
+        $('#dob').addClass('error');
+        return false;
+      }else{
+        $('#dob').removeClass('error');
+        return true;
+      }
+    };
+    
+    function validateMessage(){
+      var given_username = $('#message').val();
+      if(given_username.length < 1){
+        $('#message').addClass('error');
+        return false;
+      }else{
+        $('#message').removeClass('error');
+        return true;
+      }
+    };
+
+    function validateHerd(){
+      var given_pass = $('#herd').val();
+      if(given_pass.length < 1 ){
+        $('#herd').addClass('error');
+        return false;
+      }else{
+        $('#herd').removeClass('error');
+        return true;
+      }
+    };
+  
     $(document).ready(function() {
       $('#nav').load("nav.html");
+      $( "#dob" ).datepicker({dateFormat: 'MM d, yy'});
+      
+      $('#name').blur(validateName);
+      $('#dob').blur(validateDOB);
+      $('#message').blur(validateMessage);
+      $('#herd').blur(validateHerd);
+      $("#holiday_button").click(function(){
+    		$("holiday_message").load("holiday.html");
+    	});
+      
+      $('#contact_us_form').submit(function() {
+        if (validateName() && validateDOB() && validateMessage() && validateHerd()){
+          alert('Hi! ' + $('#name').val() + ', your message \''+$('#message').val()+ '\' has been processed and we will get back to you. Its great you herd of us through '+$('#herd')+'. Take care.');
+        }
+        return false;
+      });
     });
   </script>
   
   <div id="nav" page="contact"></div>
   <div id="container">
-    
+    <h1>Contact Us </h1>
+    <p>Please Fill out the following form and we will get back to you as soon as possible.</p>
+    <form id="contact_us_form">
+      <label>Name :</label> <input id="name" type="textarea"/>
+      <br/>
+      <label>Date of Birth :</label> <input id="dob" type="text" class="date_picker">
+      <br/>
+      <label>Member?</label> <input id="member" type="checkbox" name="member" value="Yes" />
+      <br/>
+      <label>Message :</label> <textarea id="message" rows="20" col="50"></textarea>
+      <br/>
+      <label>How did you hear about us :</label> <textarea id="herd" rows="20" col="50"></textarea>
+      <br/>
+      <label>Had a Pleasant Experieance?</label>
+      <select id="experiance">
+        <options value="yes">Yes</options>
+        <options value="no" >No</options>
+      </select>
+      <br/>
+      <input id="login" type="submit" value="Login">
+    </form>
+    <button id="holiday_button">Click here to see what santa has to say</button>
+    <div id="holiday_message">
+      
+    </div>
   <div>
 </body>
 </html>
